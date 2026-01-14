@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makar Sankranti | Higher Spirits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-blue: #87CEEB;
+            --kite-red: #ff4757;
+            --kite-yellow: #ffa502;
+            --cloud-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #1e90ff, #87CEEB);
+            font-family: 'Montserrat', sans-serif;
+            color: #2f3542;
+            overflow-x: hidden;
+        }
+
+        .kite-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Floating Kite Animation */
+        .kite {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--kite-red);
+            transform: rotate(45deg);
+            animation: fly 10s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes fly {
+            0%, 100% { transform: rotate(45deg) translate(0, 0); }
+            50% { transform: rotate(50deg) translate(100px, -100px); }
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 6rem;
+            color: white;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+
+        .importance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 10%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            padding: 10px 25px;
+            background: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #1e90ff;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Home</a>
+    
+    <div class="kite-bg">
+        <div class="kite" style="top: 20%; left: 10%; background: var(--kite-yellow);"></div>
+        <div class="kite" style="top: 50%; left: 80%; animation-delay: 2s;"></div>
+    </div>
+
+    <header class="hero">
+        <p style="text-transform: uppercase; letter-spacing: 5px; color: white;">The Sun's Journey North</p>
+        <h1>Makar Sankranti</h1>
+    </header>
+
+    <div class="importance-grid">
+        <div class="card">
+            <h3>The Transition</h3>
+            <p>Marking the sun's entry into Capricorn, this festival signals the end of winter and the start of longer, warmer days.</p>
+        </div>
+        <div class="card">
+            <h3>Sweet Unity</h3>
+            <p>"Til-Gul ghya, god god bola" — Exchange sesame sweets and speak sweet words. It's a time to bury old grudges.</p>
+        </div>
+        <div class="card">
+            <h3>The Sky Harvest</h3>
+            <p>Kite flying isn't just fun; it's a way to spend time in the early morning sun, which is healthy after a long winter.</p>
+        </div>
+    </div>
+</body>
+</html>

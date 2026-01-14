@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onam | The Golden Legacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --kerala-green: #134e4a;
+            --gold-leaf: #d4af37;
+            --off-white: #fdfbf7;
+            --deep-shadow: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--off-white);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Header */
+        header {
+            height: 60vh;
+            background: linear-gradient(rgba(19, 78, 74, 0.8), rgba(19, 78, 74, 0.8)), 
+                        url('https://images.unsplash.com/photo-1605101111054-080856019623?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-leaf);
+        }
+
+        /* Importance Section (The Story) */
+        .importance-container {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .text-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--kerala-green);
+            margin-bottom: 20px;
+        }
+
+        .text-content p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .importance-tag {
+            display: inline-block;
+            background: var(--kerala-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Image Showcase (Bento Grid) */
+        .bento-grid {
+            padding: 0 10% 80px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 20px;
+        }
+
+        .bento-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--deep-shadow);
+        }
+
+        .bento-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .bento-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .bento-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .bento-item:hover .bento-overlay {
+            opacity: 1;
+        }
+
+        /* Bento Layout Specifics */
+        .large { grid-column: span 2; grid-row: span 2; }
+        .tall { grid-row: span 2; }
+
+        /* Traditional Quote */
+        .quote-section {
+            background: var(--kerala-green);
+            color: white;
+            padding: 100px 20%;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .quote-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--kerala-green);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-nav">← HOME</a>
+
+    <header>
+        <p>Thiruvonam 2026</p>
+        <h1>ONAM</h1>
+        <div style="width: 100px; height: 3px; background: var(--gold-leaf); margin-top: 20px;"></div>
+    </header>
+
+    <section class="importance-container">
+        <div class="image-stack" style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1635331327170-8ca1d491f27f?auto=format&fit=crop&q=80&w=600" 
+                 style="width: 80%; border-radius: 20px; border: 10px solid white; box-shadow: 20px 20px 50px rgba(0,0,0,0.1);" alt="Tiger Dance">
+        </div>
+        <div class="text-content">
+            <span class="importance-tag">Cultural Heritage</span>
+            <h2>Why Onam Matters</h2>
+            <p>Onam is more than just a festival; it is the heartbeat of Kerala. It celebrates the <strong>Return of King Mahabali</strong>, a period in history known for perfect equality, prosperity, and justice.</p>
+            <p>It marks the end of the monsoon and the beginning of the harvest, symbolizing a new cycle of life. It transcends religion, bringing people of all faiths together to celebrate the "Unity of Man."</p>
+            <button style="padding: 12px 30px; background: var(--gold-leaf); border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Download Folklore PDF</button>
+        </div>
+    </section>
+
+    <div class="bento-grid">
+        <div class="bento-item large">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=800" alt="Onam Sadhya">
+            <div class="bento-overlay"><h3>Onasadya</h3><p>The Grand Feast</p></div>
+        </div>
+        <div class="bento-item">
+            <img src="https://images.unsplash.com/photo-1590050810332-6804a8069542?auto=format&fit=crop&q=80&w=500" alt="Boat Race">
+            <div class="bento-overlay"><h3>Vallam Kali</h3></div>
+        </div>
+        <div class="bento-item tall">
+            <img src="https://images.unsplash.com/photo-1605101111054-080856019623?auto=format&fit=crop&q=80&w=500" alt="Flower Rangoli">
+            <div class="bento-overlay"><h3>Pookalam</h3></div>
+        </div>
+        <div class="bento-item">
+            <img src="https://images.unsplash.com/photo-1599929281313-94f79669528d?auto=format&fit=crop&q=80&w=500" alt="Tradition">
+            <div class="bento-overlay"><h3>Thiruvathira</h3></div>
+        </div>
+    </div>
+
+    <section class="quote-section">
+        <h3>"When Maveli ruled the land, all people were equal."</h3>
+        <p>— Ancient Folk Song of Kerala</p>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #eee; font-size: 0.8rem; color: #888;">
+        &copy; 2026 Utsav Festival Trail | Built for Web Dev Competition
+    </footer>
+
+    <script>
+        // Simple parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+            header.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lohri | The Winter Fire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --fire-glow: #ff4d00;
+            --charcoal: #0f0f0f;
+            --gold: #ffcc00;
+            --wood-brown: #3d1a0d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--charcoal);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated Spark Background */
+        #spark-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at bottom, #4a1c0e 0%, #0f0f0f 80%);
+        }
+
+        /* Navigation */
+        .nav-bar {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .back-home {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid var(--gold);
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 10rem;
+            color: var(--fire-glow);
+            text-shadow: 0 0 30px var(--fire-glow), 0 0 60px #ff0000;
+            margin: 0;
+            line-height: 0.8;
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.9; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.02); }
+        }
+
+        /* Importance Section */
+        .importance-container {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            margin: 50px;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255, 77, 0, 0.3);
+        }
+
+        .info-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-text h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .info-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* Traditions Bento */
+        .tradition-bento {
+            padding: 50px 10%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+
+        .bento-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .bento-card:hover {
+            background: var(--fire-glow);
+            transform: translateY(-10px);
+        }
+
+        .bento-card h3 {
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .bento-card:hover h3 { color: white; }
+    </style>
+</head>
+<body>
+
+    <canvas id="spark-canvas"></canvas>
+
+    <nav class="nav-bar">
+        <a href="index.html" class="back-home">← BACK</a>
+        <div style="color: var(--fire-glow); font-weight: 800; letter-spacing: 5px;">PUNJAB DHOL</div>
+    </nav>
+
+    <section class="hero">
+        <p style="letter-spacing: 8px; color: #aaa;">THE FESTIVAL OF FIRE</p>
+        <h1>LOHRI</h1>
+        <p style="margin-top: 20px; font-weight: 300;">Welcoming the Sun and the Harvest</p>
+    </section>
+
+    <section class="importance-container">
+        <div class="info-text">
+            <h2>The Significance</h2>
+            <p>Lohri marks the end of the peak of winter and is a traditional welcome of longer days and the sun's journey to the northern hemisphere. It is a day of <strong>Thanksgiving</strong> for the farmers of Punjab.</p>
+            <p style="margin-top: 20px;">The bonfire represents the Sun God, and offerings of sesame seeds (til), jaggery (gur), and peanuts are made to the fire to seek abundance and prosperity.</p>
+        </div>
+        <div class="info-image">
+            <img src="https://images.unsplash.com/photo-1591461912953-e5e783687391?auto=format&fit=crop&q=80&w=800" alt="Lohri Fire">
+        </div>
+    </section>
+
+    <div class="tradition-bento">
+        <div class="bento-card">
+            <h3>The Bonfire</h3>
+            <p>The heart of Lohri. People circle the fire, singing folk songs and dancing the Bhangra.</p>
+        </div>
+        <div class="bento-card">
+            <h3>Dulha Bhatti</h3>
+            <p>Folk songs are sung in praise of Dulha Bhatti, a legendary hero who rescued girls from slavery.</p>
+        </div>
+        <div class="bento-card">
+            <h3>Winter Treats</h3>
+            <p>Sarson da Saag, Makki di Roti, and sweets made of peanuts and rewari are the soul of the feast.</p>
+        </div>
+    </div>
+
+    <script>
+        // Spark Particle System
+        const canvas = document.getElementById('spark-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 100;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.opacity = Math.random() * 0.5 + 0.5;
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.opacity > 0.01) this.opacity -= 0.005;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255, 100, 0, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function handleParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].y < 0 || particles[i].opacity <= 0.01) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+            if (particles.length < 150) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
